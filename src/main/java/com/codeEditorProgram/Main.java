@@ -10,9 +10,10 @@ public class Main {
         CodeEditor codeEditor = new CodeEditor();
 
         String testString = new String();
+        Person person = new Person();
 
-        String prefix = "";
-        List<String> methodsFromClass = codeEditor.suggestMethods(new HashMap<>(), prefix);
+        String prefix = "get";
+        List<String> methodsFromClass = codeEditor.suggestMethods(person, prefix);
 
         System.out.println("Public methods: ");
         for(String methodName : methodsFromClass) {

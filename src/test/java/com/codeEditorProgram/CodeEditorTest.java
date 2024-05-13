@@ -90,4 +90,26 @@ public class CodeEditorTest {
                 "nextFloat", "nextLine", "nextByte", "nextShort", "nextBigInteger", "nextBigDecimal")));
         assertFalse(methodNames.contains("hasNextByte"));
     }
+
+    @Test
+    public void givenClassPerson_whenGetsAllPublicMethods_thenCorrect() {
+        Person testPerson = new Person();
+        String prefix = "";
+        List<String> methodNames = codeEditor.suggestMethods(testPerson, prefix);
+
+        assertEquals("Person", testPerson.getClass().getSimpleName());
+        assertEquals(7, methodNames.size());
+    }
+
+    @Test
+    public void givenClassPerson_whenGetsSpecificPublicMethods_thenCorrect() {
+        Person testPerson = new Person();
+        String prefix = "get";
+        List<String> methodNames = codeEditor.suggestMethods(testPerson, prefix);
+
+        assertEquals("Person", testPerson.getClass().getSimpleName());
+        assertEquals(3, methodNames.size());
+        assertTrue(methodNames.containsAll(Arrays.asList("getLastName", "getFirstName", "getAge")));
+        assertFalse(methodNames.contains("setAge"));
+    }
 }
