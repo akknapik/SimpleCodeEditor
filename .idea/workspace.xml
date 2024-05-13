@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a9b246b-d5d6-4fe9-877b-0268568df851" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="8a9b246b-d5d6-4fe9-877b-0268568df851" name="Changes" comment="First commit project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,15 +39,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": ""
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -62,7 +56,7 @@
       <recent name="com.codeEditorProgram" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CodeEditorTest">
+  <component name="RunManager">
     <configuration name="CodeEditorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project" />
       <extension name="coverage">
@@ -78,7 +72,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CodeEditorTest.givenClassArrayList_whenGetsSpecificPublicMethods_thenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CodeEditorTest.givenClassPerson_whenGetsAllPublicMethods_thenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project" />
       <extension name="coverage">
         <pattern>
@@ -88,7 +82,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.codeEditorProgram" />
       <option name="MAIN_CLASS_NAME" value="com.codeEditorProgram.CodeEditorTest" />
-      <option name="METHOD_NAME" value="givenClassArrayList_whenGetsSpecificPublicMethods_thenCorrect" />
+      <option name="METHOD_NAME" value="givenClassPerson_whenGetsAllPublicMethods_thenCorrect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodeEditorTest.givenClassPerson_whenGetsSpecificPublicMethods_thenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.codeEditorProgram.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.codeEditorProgram" />
+      <option name="MAIN_CLASS_NAME" value="com.codeEditorProgram.CodeEditorTest" />
+      <option name="METHOD_NAME" value="givenClassPerson_whenGetsSpecificPublicMethods_thenCorrect" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,29 +136,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CodeEditorTest.givenClassString_whenGetsSpecificPublicMethods_thenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.codeEditorProgram.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.codeEditorProgram" />
-      <option name="MAIN_CLASS_NAME" value="com.codeEditorProgram.CodeEditorTest" />
-      <option name="METHOD_NAME" value="givenClassString_whenGetsSpecificPublicMethods_thenCorrect" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CodeEditorTest" />
+        <item itemvalue="JUnit.CodeEditorTest.givenClassPerson_whenGetsSpecificPublicMethods_thenCorrect" />
+        <item itemvalue="JUnit.CodeEditorTest.givenClassPerson_whenGetsAllPublicMethods_thenCorrect" />
         <item itemvalue="JUnit.CodeEditorTest.givenClassScanner_whenGetsSpecificPublicMethods_thenCorrect" />
         <item itemvalue="JUnit.CodeEditorTest.givenClassScanner_whenGetsAllPublicMethods_thenCorrect" />
-        <item itemvalue="JUnit.CodeEditorTest.givenClassArrayList_whenGetsSpecificPublicMethods_thenCorrect" />
-        <item itemvalue="JUnit.CodeEditorTest.givenClassString_whenGetsSpecificPublicMethods_thenCorrect" />
       </list>
     </recent_temporary>
   </component>
@@ -161,6 +155,29 @@
       <option name="presentableId" value="Default" />
       <updated>1715509059746</updated>
     </task>
+    <task id="LOCAL-00001" summary="First commit project">
+      <created>1715521133180</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715521133180</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit project" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit project" />
   </component>
 </project>
