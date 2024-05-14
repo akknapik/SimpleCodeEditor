@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a9b246b-d5d6-4fe9-877b-0268568df851" name="Changes" comment="First commit project">
+    <list default="true" id="8a9b246b-d5d6-4fe9-877b-0268568df851" name="Changes" comment="Add Person class tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/CodeEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/CodeEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codeEditorProgram/CodeEditorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codeEditorProgram/CodeEditorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="mati2" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -139,10 +147,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CodeEditorTest" />
-        <item itemvalue="JUnit.CodeEditorTest.givenClassPerson_whenGetsSpecificPublicMethods_thenCorrect" />
-        <item itemvalue="JUnit.CodeEditorTest.givenClassPerson_whenGetsAllPublicMethods_thenCorrect" />
         <item itemvalue="JUnit.CodeEditorTest.givenClassScanner_whenGetsSpecificPublicMethods_thenCorrect" />
         <item itemvalue="JUnit.CodeEditorTest.givenClassScanner_whenGetsAllPublicMethods_thenCorrect" />
+        <item itemvalue="JUnit.CodeEditorTest.givenClassPerson_whenGetsSpecificPublicMethods_thenCorrect" />
+        <item itemvalue="JUnit.CodeEditorTest.givenClassPerson_whenGetsAllPublicMethods_thenCorrect" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715521133180</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Person class tests">
+      <created>1715625261380</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715625261381</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,7 +185,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="mati2" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -178,6 +205,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit project" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit project" />
+    <MESSAGE value="Add Person class tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Person class tests" />
   </component>
 </project>
