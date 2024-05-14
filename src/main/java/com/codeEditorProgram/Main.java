@@ -12,7 +12,7 @@ public class Main {
         String testString = new String();
         Person person = new Person();
 
-        String prefix = "get";
+        String prefix = "";
         List<String> methodsFromClass = codeEditor.suggestMethods(person, prefix);
 
         System.out.println("Public methods: ");
