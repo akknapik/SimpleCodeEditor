@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a9b246b-d5d6-4fe9-877b-0268568df851" name="Changes" comment="Add Person class tests">
+    <list default="true" id="8a9b246b-d5d6-4fe9-877b-0268568df851" name="Changes" comment="Stream API in CodeEditor method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/CodeEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/CodeEditor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/codeEditorProgram/CodeEditorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codeEditorProgram/CodeEditorTest.java" afterDir="false" />
     </list>
@@ -64,7 +63,7 @@
       <recent name="com.codeEditorProgram" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.CodeEditorTest">
     <configuration name="CodeEditorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project" />
       <extension name="coverage">
@@ -177,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715625261381</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Stream API in CodeEditor method">
+      <created>1715717361667</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715717361667</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -206,6 +212,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit project" />
     <MESSAGE value="Add Person class tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Person class tests" />
+    <MESSAGE value="Stream API in CodeEditor method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stream API in CodeEditor method" />
   </component>
 </project>
