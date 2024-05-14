@@ -25,7 +25,7 @@ public class CodeEditorTest {
         String prefix = "";
 
         // When
-        List<String> methodNames = codeEditor.suggestMethods(new HashMap<>(), prefix);
+        List<String> methodNames = codeEditor.suggestMethods(testHashmap, prefix);
 
         // Then
         assertEquals("HashMap", testHashmap.getClass().getSimpleName());
