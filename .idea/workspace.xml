@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8a9b246b-d5d6-4fe9-877b-0268568df851" name="Changes" comment="Stream API in CodeEditor method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/codeEditorProgram/CodeEditorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codeEditorProgram/CodeEditorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -41,7 +40,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2gMYkkHOwRUAvszx9GOCNcTbD2e" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -63,7 +64,7 @@
       <recent name="com.codeEditorProgram" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CodeEditorTest">
+  <component name="RunManager">
     <configuration name="CodeEditorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project" />
       <extension name="coverage">
@@ -183,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715717361667</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Stream API in CodeEditor method">
+      <created>1715723466272</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715723466272</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
