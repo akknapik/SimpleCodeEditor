@@ -7,7 +7,7 @@ public class Main {
         CodeEditor codeEditor = new CodeEditor();
 
         String prefix = "";
-        List<String> methodsFromClass = codeEditor.suggestMethods(new Person(), prefix);
+        List<String> methodsFromClass = codeEditor.suggestMethods(codeEditor, prefix);
 
         System.out.println("Public methods: ");
         for(String methodName : methodsFromClass) {
