@@ -139,7 +139,7 @@ public class CodeEditorTest {
 
         // Then
         assertEquals("Person", testPerson.getClass().getSimpleName());
-        assertEquals(7, methodNames.size());
+        assertEquals(6, methodNames.size());
     }
 
     @Test

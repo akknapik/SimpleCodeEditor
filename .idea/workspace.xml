@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a9b246b-d5d6-4fe9-877b-0268568df851" name="Changes" comment="Stream API in CodeEditor method">
+    <list default="true" id="8a9b246b-d5d6-4fe9-877b-0268568df851" name="Changes" comment="Next Part GUI, Part Compile and Run">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codeEditorProgram/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codeEditorProgram/CodeEditorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codeEditorProgram/CodeEditorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,13 +21,14 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="mati2" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,6 +42,9 @@
         <option name="workspaceImportEnabled" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2gMYkkHOwRUAvszx9GOCNcTbD2e" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -53,12 +60,23 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\studia\IIROK\SEMESTR4\Java\Project\target" />
+      <recent name="E:\studia\IIROK\SEMESTR4\Java\Project\src\main\resources" />
+      <recent name="E:\studia\IIROK\SEMESTR4\Java\Project\src\main\java\com\codeEditorProgram" />
+      <recent name="E:\studia\IIROK\SEMESTR4\Java\Project" />
+      <recent name="E:\studia\IIROK\SEMESTR4\Java\Project\src" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.codeEditorProgram" />
@@ -191,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715723466272</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="First version GUI">
+      <created>1717105986616</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717105986616</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,6 +246,8 @@
     <MESSAGE value="First commit project" />
     <MESSAGE value="Add Person class tests" />
     <MESSAGE value="Stream API in CodeEditor method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stream API in CodeEditor method" />
+    <MESSAGE value="First version GUI" />
+    <MESSAGE value="Next Part GUI, Part Compile and Run" />
+    <option name="LAST_COMMIT_MESSAGE" value="Next Part GUI, Part Compile and Run" />
   </component>
 </project>
