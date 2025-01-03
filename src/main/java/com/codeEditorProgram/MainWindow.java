@@ -1,14 +1,17 @@
 package com.codeEditorProgram;
 
 import javax.swing.*;
+import javax.swing.text.BadLocationException;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.io.*;
-import com.formdev.flatlaf.intellijthemes.FlatDarkFlatIJTheme;
-
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainWindow extends JFrame {
 
@@ -21,6 +24,7 @@ public class MainWindow extends JFrame {
     private JButton stopButton;
     private Process currentProcess;
     private Thread runThread;
+    private JPopupMenu popupMenu;
 
     MainWindow() {
         frame = new JFrame("Code Editor - Nowy plik");
@@ -49,6 +53,10 @@ public class MainWindow extends JFrame {
         splitPane.setDividerLocation((int) (screenHeight * 0.75));
         splitPane.setResizeWeight(0.75);
 
+        Font consoleFont = new Font("Monospaced", Font.PLAIN, 14);
+        textArea.setFont(consoleFont);
+        consoleArea.setFont(consoleFont);
+
         frame.add(splitPane);
         fileChooser = new JFileChooser();
         fileChooser.setCurrentDirectory(new File("."));
@@ -56,6 +64,45 @@ public class MainWindow extends JFrame {
         createMenu(frame);
         var listener = new Terminator();
         frame.addWindowListener(listener);
+
+        textArea.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {}
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.isControlDown() && e.isShiftDown()) {
+                    List<String> methods;
+                    String text = textArea.getText();
+                    try {
+                        methods = showMethods(text);
+                        if (!methods.isEmpty()) {
+                            popupMenu = new JPopupMenu();
+                            for (int i = 0; i < methods.size(); i++) {
+                                JMenuItem menuItem = new JMenuItem(methods.get(i));
+                                popupMenu.add(menuItem);
+                            }
+
+                            JScrollPane scrollPane = new JScrollPane(popupMenu);
+                            scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+                            scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
+                            int caretPosition = textArea.getCaretPosition();
+                            Rectangle rectangle = textArea.modelToView(caretPosition);
+                            if (rectangle != null) {
+                                popupMenu.show(textArea, rectangle.x, rectangle.y);
+                            }
+                        }
+                    } catch (BadLocationException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        });
+
         frame.setVisible(true);
     }
 
@@ -80,37 +127,30 @@ public class MainWindow extends JFrame {
         saveItemAs.addActionListener(e -> saveFileAs());
 
         JMenuItem setBgColorDark = new JMenuItem("Ciemny motyw");
-        setBgColorDark.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        setBgColorDark.addActionListener(e -> {
                 textArea.setBackground(Color.DARK_GRAY);
                 textArea.setForeground(Color.WHITE);
                 consoleArea.setBackground(Color.DARK_GRAY);
                 consoleArea.setForeground(Color.WHITE);
-            }
         });
 
         JMenuItem setBgColorWhite = new JMenuItem("Jasny motyw");
-        setBgColorWhite.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        setBgColorWhite.addActionListener(e -> {
                 textArea.setBackground(Color.WHITE);
                 textArea.setForeground(Color.BLACK);
                 consoleArea.setBackground(Color.WHITE);
                 consoleArea.setForeground(Color.BLACK);
-            }
         });
 
         runButton.addActionListener(e -> {
-                    try {
-                        runCode();
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-                });
+            try {
+                runCode();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
         stopButton.addActionListener(e -> stopCode());
         stopButton.setVisible(false);
-
 
         fileMenu.add(createNewItem);
         fileMenu.add(openItem);
@@ -136,6 +176,7 @@ public class MainWindow extends JFrame {
                 saveFile();
             }
             textArea.setText("");
+            consoleArea.setText("");
             currentFile = null;
             setWindowTitle("Nowy plik");
         }
@@ -198,7 +239,7 @@ public class MainWindow extends JFrame {
 
     class Terminator extends WindowAdapter {
         public void windowClosing(WindowEvent e) {
-           onClose();
+            onClose();
         }
     }
 
@@ -241,7 +282,7 @@ public class MainWindow extends JFrame {
                 while ((line = errorReader.readLine()) != null) {
                     errorMessage.append(line).append("\n");
                 }
-                consoleArea.append("Kompilacja nie powiodła się:\n" + errorMessage.toString());
+                consoleArea.append("Kompilacja nie powiodła się:\n" + errorMessage);
                 runButton.setVisible(true);
                 stopButton.setVisible(false);
                 return;
@@ -274,8 +315,8 @@ public class MainWindow extends JFrame {
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {
-                        runButton.setVisible(true);
-                        stopButton.setVisible(false);
+                    runButton.setVisible(true);
+                    stopButton.setVisible(false);
                 }
             });
             runThread.start();
@@ -298,17 +339,68 @@ public class MainWindow extends JFrame {
         stopButton.setVisible(false);
     }
 
+    private List<String> showMethods(String text) throws BadLocationException {
+        List<String> packages = Arrays.asList("java.lang.","java.util.","","java.io.","java.nio.","java.net.","java.awt.",
+                "javax.swing.","java.sql.","java.text.","java.time.","java.beans.","java.math.","java.rmi.","java.security.",
+                "java.util.concurrent.","java.util.function.","java.util.stream.","javax.annotation.","javax.naming.",
+                "javax.management.","javax.xml."
+        );
 
-    public static void main(String[] args) {
-        FlatDarkFlatIJTheme.setup();
-        //FlatDarculaLaf.setup();
+        String regex = "([A-Z][a-zA-Z0-9\\[\\]]*(?:<[a-zA-Z, ]*>)?)\\s+([a-zA-Z][a-zA-Z0-9]*)";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(text);
 
-        try {
-            UIManager.setLookAndFeel( new FlatDarkFlatIJTheme() );
-        } catch( Exception ex ) {
-            System.err.println( "Failed to initialize UIManager" );
+        HashMap<String, Object> methods = new HashMap<>();
+
+        while (matcher.find()) {
+            String objectType = matcher.group(1).replaceAll("[\\[\\]<>]", "");
+            String variableName = matcher.group(2).replaceAll("[\\[\\]<>]", "");
+
+            for (String pkg : packages) {
+                try {
+                    String fullClassName = pkg + objectType;
+                    Class<?> clazz = Class.forName(fullClassName);
+                    Constructor<?> constructor = clazz.getDeclaredConstructor();
+                    Object instance = constructor.newInstance();
+                    if (instance != null) {
+                        methods.put(variableName, instance);
+                    }
+                    break;
+                }  catch (NoSuchMethodException | InstantiationException | IllegalAccessException |
+                          InvocationTargetException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    continue;
+                }
+            }
         }
+        methods.put("System.out",System.out);
+        methods.put("System.err",System.err);
+        methods.put("System.in",System.in);
 
-        MainWindow codeEditor = new MainWindow();
-    }
+            int caretPosition = textArea.getCaretPosition();
+            text = textArea.getText(0, caretPosition);
+
+            int dotIndex = text.lastIndexOf('.');
+
+            char[] spaceAndNewLine = new char[] {' ', '\n'};
+            int dotIndex2 = text.lastIndexOf('.');
+            int spaceOrNewlineIndex = -1;
+            for (char c : spaceAndNewLine) {
+                int index = text.lastIndexOf(c, dotIndex2);
+                if (index > spaceOrNewlineIndex) {
+                    spaceOrNewlineIndex = index;
+                }
+            }
+
+            String objectName = text.substring(spaceOrNewlineIndex + 1, dotIndex).trim();
+            String prefix = text.substring(dotIndex + 1).trim();
+
+            Object value = methods.get(objectName);
+
+            CodeEditor codeEditor = new CodeEditor();
+            List<String> methodSuggestions = codeEditor.suggestMethods(value, prefix);
+
+            return methodSuggestions;
+        }
 }

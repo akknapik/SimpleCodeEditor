@@ -1,18 +1,18 @@
 package com.codeEditorProgram;
 
-import java.util.List;
+import com.formdev.flatlaf.intellijthemes.FlatDarkFlatIJTheme;
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        CodeEditor codeEditor = new CodeEditor();
+        FlatDarkFlatIJTheme.setup();
 
-        String prefix = "";
-        List<String> methodsFromClass = codeEditor.suggestMethods(codeEditor, prefix);
-
-        System.out.println("Public methods: ");
-        for(String methodName : methodsFromClass) {
-            System.out.println(methodName);
+        try {
+            UIManager.setLookAndFeel( new FlatDarkFlatIJTheme() );
+        } catch( Exception ex ) {
+            System.err.println( "Failed to initialize UIManager" );
         }
-        System.out.println(methodsFromClass.size());
+
+        MainWindow codeEditor = new MainWindow();
     }
 }
